@@ -6,24 +6,24 @@
 // Launchpad port: S Reig, 2011-04-23; Code Composer Studio v4.2.3
 // ----------------------------------------------------------------------
 
-#include <msp430g2231.h>	// Specific device
+#include <msp430g2231.h>       // Specific device
 // Pins for LED and button on port 1
 #define LED1	BIT0
-#define B1		BIT3
+#define B1	BIT3
 
-void main(void)
+void main (void)
 {
-  WDTCTL = WDTPW + WDTHOLD;		// Stop watchdog timer
-  P1DIR |= LED1;				// Set pin with LED1 to output
+  WDTCTL = WDTPW + WDTHOLD;    // Stop watchdog timer
+  P1DIR |= LED1;               // Set pin with LED1 to output
   
-  for (;;) {					// Loop forever
-	while ((P1IN & B1) == 0) { 	// Loop while button up
-	} 							// doing nothing
+  for (;;) {                   // Loop forever
+    while ((P1IN & B1) == 0) { // Loop while button up
+    }                          // doing nothing
 // Actions to be taken when button is pressed
-	P1OUT |= LED1;	 			// Turn LED1 on
-	while ((P1IN & B1) != 0) { 	// Loop while button down
-	} 							// doing nothing
+    P1OUT |= LED1;             // Turn LED1 on
+    while ((P1IN & B1) != 0) { // Loop while button down
+    }                          // doing nothing
 // Actions to be taken when button is released
-	P1OUT &= ~LED1;				// Turn LED1 off
-	}
+    P1OUT &= ~LED1;            // Turn LED1 off
+  }
 }
