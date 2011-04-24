@@ -1,7 +1,7 @@
-// timrled1.c - toggles LEDs with period of about 1s
+// timrled1.c - toggles LEDs with period of about 1.04s
 // Poll free-running timer A with period of about 0.52s
 // Timer clock is SMCLK divided by 8, continuous mode
-// Launchpad v1.3 , LED1,2 active low on P1.0,6
+// Launchpad v1.3 , LED1,2 active high on P1.0,6
 // J H Davies, 2006-06-12;
 // Launchpad port: S Reig, 2011-04-24; Code Composer Studio v4.2.3
 // ----------------------------------------------------------------------
